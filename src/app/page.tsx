@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { AppHeader, TabBar, FormatPicker, FormatDropdown } from "@/components/layout";
 import { StackSimulator } from "@/components/stack";
@@ -8,6 +8,7 @@ import { KeywordDictionary } from "@/components/glossary";
 import { CardSearch } from "@/components/glossary/CardSearch";
 import { LifeCounter } from "@/components/life";
 import { SectionLabel } from "@/components/ui";
+import { syncLatestSet } from "@/lib/setChecker";
 import type { Format } from "@/types";
 
 const TABS = [
@@ -21,6 +22,10 @@ export default function HomePage() {
   const [format, setFormat] = useState<Format>("modern");
   const [formatChosen, setFormatChosen] = useState(false);
   const [activeTab, setActiveTab] = useState("simulator");
+
+  useEffect(() => {
+    syncLatestSet();
+  }, []);
 
   function handleFormatSelect(f: Format) {
     setFormat(f);

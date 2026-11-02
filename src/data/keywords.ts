@@ -693,6 +693,14 @@ export const KEYWORDS: Record<KeywordCategory, KeywordEntry[]> = {
       related: ["Evoke", "Devour"],
     },
     {
+      name: "Empower Jace",
+      rule: "A keyword action. If you don't control a Jace planeswalker token, create one with 0 loyalty. Then put N loyalty counters on a Jace token you control. The token has '-1: Surveil 1' and '-3: Draw a card.'",
+      example:
+        "A spell says 'Empower Jace 2.' Create a Jace token, put 2 loyalty counters on it. Use -1: Surveil 1 twice, or save for -3: Draw a card.",
+      tip: "You only ever get one Jace token. Multiple empower effects stack loyalty on the same one. Proliferate works on it too.",
+      related: ["Planeswalker", "Surveil", "Proliferate"],
+    },
+    {
       name: "Enlist",
       rule: "As this creature attacks, you may tap an untapped non-attacking creature you control to add its power to this creature's power until end of turn.",
       example: "Enlist a 4/4 to give this attacking creature +4/+0 for the combat.",
@@ -747,6 +755,14 @@ export const KEYWORDS: Record<KeywordCategory, KeywordEntry[]> = {
       example: "Three exalted triggers with a single attacker gives it +3/+3.",
       tip: "Exalted stacks from multiple sources — a deck built around one big attacker can pump it enormously.",
       related: ["Battle Cry", "Boast"],
+    },
+    {
+      name: "Exhaust",
+      rule: "An activated ability that can only be activated once for the entire game. Cannot be reset even if the permanent leaves and re-enters the battlefield.",
+      example:
+        "A planeswalker has 'Exhaust — Return target creature from your graveyard to the battlefield.' One powerful use, then never again.",
+      tip: "Exhaust tracks across zones. If the permanent dies and comes back, you still can't use it again.",
+      related: ["Activate", "Loyalty Abilities"],
     },
     {
       name: "Exploit",
@@ -859,6 +875,14 @@ export const KEYWORDS: Record<KeywordCategory, KeywordEntry[]> = {
       example: "Haunt a creature — when it dies later, you get a second trigger of the original effect.",
       tip: "The haunted creature doesn't have to be yours — haunting an opponent's creature can be useful if you can kill it.",
       related: ["Cipher", "Echo"],
+    },
+    {
+      name: "Heartwood Token",
+      rule: "A predefined artifact token that can be tapped and sacrificed to add one red or green mana.",
+      example:
+        "Create a Heartwood token. Later sacrifice it for a burst of red or green mana when you need it.",
+      tip: "Heartwood tokens are artifacts — they count for metalcraft, affinity, and improvise.",
+      related: ["Treasure", "Food", "Clue"],
     },
     {
       name: "Heroic",
@@ -1118,6 +1142,14 @@ export const KEYWORDS: Record<KeywordCategory, KeywordEntry[]> = {
       example: "You prepare a card on turn 2 by exiling it face down. On turn 5, you cast it for its reduced prepare cost instead of its mana cost.",
       tip: "Prepared cards are exiled face down — opponents can't see what you're saving. Plan ahead for big plays.",
       related: ["Foretell", "Suspend"],
+    },
+    {
+      name: "Prepared",
+      rule: "On double-faced Creature // Spell cards. A condition makes the creature prepared; while prepared you may cast a copy of its spell half, which unprepares it.",
+      example:
+        "Your creature becomes prepared when a condition is met. Cast a copy of its back-face spell for free, then it unprepares. Meet the condition again to repeat.",
+      tip: "Prepared casts a COPY — the original stays as a creature. Cast triggers fire on the copy.",
+      related: ["Transform", "Adventure", "Disturb"],
     },
     {
       name: "Prototype",
